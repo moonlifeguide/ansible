@@ -1,6 +1,6 @@
 ---
 
-- hosts: kpctest
+- hosts: "{{ my_hosts | d([]) }}"
 
   #become: true
   tasks:
