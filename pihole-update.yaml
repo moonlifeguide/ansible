@@ -7,3 +7,23 @@
       register: shell_output
       shell: "pihole -up"
     - debug: var=shell_output.stdout_lines
+
+- hosts: all
+  become: true
+  tasks:
+    - name: Update package lists
+      apt:
+        update_cache: yes
+      changed_when: false
+    - name: Upgrade all packages
+      apt:
+        upgrade: dist
+        autoremove: yes
+        autoclean: yes
+    - name: Update Pi-hole
+      command: pihole -up
+      register: pihole_update_result
+      changed_when: "'Everything is already up to date' not in pihole_update_result.stdout"
+    - name: Display Pi-hole update results
+      debug:
+        var: pihole_update_result.stdout_lines
