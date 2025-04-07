@@ -1,7 +1,7 @@
 --- 
 
-  #become: false
-  hosts: "all"
+  become: false
+  hosts: all
   tasks: 
     - name: "Look For Pihole upgrade"
       register: shell_output
