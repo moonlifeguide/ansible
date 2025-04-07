@@ -1,0 +1,11 @@
+--- 
+
+  become: false
+  hosts: "all"
+  tasks: 
+    - 
+      name: "Look For Pihole upgrade"
+      register: shell_output
+      shell: "pihole -up"
+    - 
+      debug: var=shell_output.stdout_lines
