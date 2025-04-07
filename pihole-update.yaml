@@ -9,7 +9,7 @@
     - debug: var=shell_output.stdout_lines
 
 - hosts: all
-  become: true
+  #become: true
   tasks:
     - name: Update package lists
       apt:
