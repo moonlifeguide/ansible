@@ -1,10 +1,19 @@
 ---
 
+#- hosts: all
 - hosts: all
-
-  become: true
+  become: yes
   tasks:
-    - name: Update and upgrade apt packages
+    - name: Update apt cache
       apt:
-        upgrade: yes
         update_cache: yes
+       
+    - name: Upgrade all packages
+      apt:
+        upgrade: dist
+  #become: true
+  #tasks:
+  #  - name: Update and upgrade apt packages
+  #    apt:
+  #      upgrade: yes
+  #      update_cache: yes
