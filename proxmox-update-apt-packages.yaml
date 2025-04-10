@@ -1,0 +1,9 @@
+---
+
+#- hosts: all
+- hosts: all
+  #become: yes
+  tasks:
+    - name: Upgrade the OS (apt-get dist-upgrade)
+      ansible.builtin.apt:
+        upgrade: dist
