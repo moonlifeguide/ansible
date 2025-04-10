@@ -1,6 +1,7 @@
 ---
 
-- hosts: "{{ target_hosts }}"
+- name: Check disk space available
+  hosts: all
   
   tasks:
     - name: Check disk space available
