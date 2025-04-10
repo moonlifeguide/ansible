@@ -1,6 +1,7 @@
 ---
 - name: Check disk space available
   hosts: "{{ target_hosts }}"
+  
   tasks:
     - name: Check disk space available
       ansible.builtin.shell:
