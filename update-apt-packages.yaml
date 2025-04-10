@@ -4,12 +4,7 @@
 - hosts: all
   #become: yes
   tasks:
-    - name: Upgrade the OS (apt-get dist-upgrade)
-      ansible.builtin.apt:
-        upgrade: dist
-  #become: true
-  #tasks:
-  #  - name: Update and upgrade apt packages
-  #    apt:
-  #      upgrade: yes
-  #      update_cache: yes
+    - name: Update and upgrade apt packages
+      apt:
+        upgrade: yes
+        update_cache: yes
