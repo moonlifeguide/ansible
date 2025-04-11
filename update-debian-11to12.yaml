@@ -1,7 +1,7 @@
 ---
 
 - hosts: all
-  become: true
+  #become: true
   tasks:
     - name: Prepare. Autoremove old packages
       apt:
